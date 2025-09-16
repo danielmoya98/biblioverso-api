@@ -32,7 +32,7 @@ POST http://localhost:4000/api/v1/app/login
 Content-Type: application/json
 
 {
-  "email": "juanperez@example.com",
+  "email": "juan.perez@example.com",
   "password": "123456"
 }
 
@@ -40,3 +40,17 @@ Content-Type: application/json
 ### Obtener reservas de un usuario (ejemplo con idUsuario = 1)
 GET http://localhost:4000/api/v1/app/reservas/20
 Accept: application/json
+
+
+### Agregar libro a favoritos
+POST http://localhost:4000/api/v1/app/favoritos
+Content-Type: application/json
+
+{
+  "idUsuario": 1,
+  "idLibro": 42
+}
+
+### Obtener favoritos de un usuario
+GET http://localhost:4000/api/v1/app/favoritos/20
+

@@ -1,5 +1,7 @@
 import UsuarioModel from "../models/UsuarioModel.js";
 import ReservaModel from "../models/ReservaModel.js";
+import FavoritoModel from "../models/FavoritoModel.js";
+
 
 export const IniciarSesionApp = async (req, res) => {
     const { email, password } = req.body;
@@ -37,6 +39,38 @@ export const getReservasByUsuario = async (req, res) => {
     } catch (error) {
         console.error("Error obteniendo reservas:", error);
         res.status(500).json({ error: "Error obteniendo reservas" });
+    }
+};
+
+
+export const agregarFavorito = async (req, res) => {
+    const { idUsuario, idLibro } = req.body;
+
+    if (!idUsuario || !idLibro) {
+        return res.status(400).json({ error: "Faltan datos obligatorios" });
+    }
+
+    try {
+        const favorito = await FavoritoModel.agregarFavorito(idUsuario, idLibro);
+        if (!favorito) {
+            return res.status(200).json({ message: "El libro ya estaba en favoritos" });
+        }
+        res.status(201).json({ message: "Libro agregado a favoritos", favorito });
+    } catch (error) {
+        console.error("Error al agregar favorito:", error);
+        res.status(500).json({ error: "Error interno al agregar favorito" });
+    }
+};
+
+export const obtenerFavoritos = async (req, res) => {
+    const { idUsuario } = req.params;
+
+    try {
+        const favoritos = await FavoritoModel.obtenerFavoritosPorUsuario(idUsuario);
+        res.json({ favoritos });
+    } catch (error) {
+        console.error("Error al obtener favoritos:", error);
+        res.status(500).json({ error: "Error interno al obtener favoritos" });
     }
 };
 
