@@ -1,8 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import appRoutes from "./routes/appRoutes.js";
-import desktopRoutes from "./routes/desktopRoutes.js";
-import webRoutes from "./routes/webRoutes.js";
+
 
 dotenv.config();
 
