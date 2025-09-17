@@ -1,5 +1,5 @@
 ### Login correcto
-POST https://localhost:4000/api/v1/app/login
+POST https://biblioverso-api.onrender.com/api/v1/app/login
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ### Login inválido
-POST https://localhost:4000/api/v1/app/login
+POST https://biblioverso-api.onrender.com/api/v1/app/login
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 
 ### Crear usuario
-POST https://localhost:4000/api/v1/app/register
+POST https://biblioverso-api.onrender.com/api/v1/app/register
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### Login
-POST http://localhost:4000/api/v1/app/login
+POST https://biblioverso-api.onrender.com/api/v1/app/login
 Content-Type: application/json
 
 {
@@ -38,9 +38,7 @@ Content-Type: application/json
 
 
 ### Obtener reservas de un usuario (ejemplo con idUsuario = 1)
-GET https://localhost:4000/api/v1/app/reservas/20
+GET https://biblioverso-api.onrender.com/api/v1/app/reservas/20
 Accept: application/json
-
-
 
 
