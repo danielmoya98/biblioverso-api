@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import appRoutes from "./routes/appRoutes.js";
+import desktopRoutes from "./routes/desktopRoutes.js";
 
 
 dotenv.config();
@@ -10,7 +11,7 @@ app.use(express.json());
 
 // Rutas separadas por cliente
 app.use("/api/v1/app", appRoutes);
-// app.use("/api/v1/desktop", desktopRoutes);
+app.use("/api/v1/desktop", desktopRoutes);
 // app.use("/api/v1/web", webRoutes);
 
 

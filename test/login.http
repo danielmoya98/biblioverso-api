@@ -1,5 +1,5 @@
 ### Login correcto
-POST http://localhost:4000/api/v1/app/login
+POST https://localhost:4000/api/v1/app/login
 Content-Type: application/json
 
 {
@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 
 ### Login inválido
-POST http://localhost:4000/api/v1/app/login
+POST https://localhost:4000/api/v1/app/login
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 
 ### Crear usuario
-POST http://localhost:4000/api/v1/app/register
+POST https://localhost:4000/api/v1/app/register
 Content-Type: application/json
 
 {
@@ -32,11 +32,15 @@ POST http://localhost:4000/api/v1/app/login
 Content-Type: application/json
 
 {
-  "email": "juanperez@example.com",
+  "email": "juan.perez@example.com",
   "password": "123456"
 }
 
 
 ### Obtener reservas de un usuario (ejemplo con idUsuario = 1)
-GET http://localhost:4000/api/v1/app/reservas/20
+GET https://localhost:4000/api/v1/app/reservas/20
 Accept: application/json
+
+
+
+

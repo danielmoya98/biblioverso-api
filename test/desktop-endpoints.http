@@ -1,0 +1,8 @@
+### Login Desktop (solo admin rol=1)
+POST http://localhost:4000/api/v1/desktop/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
