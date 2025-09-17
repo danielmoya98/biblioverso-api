@@ -1,5 +1,11 @@
 import express from "express";
-import {getReservasByUsuario, IniciarSesionApp, RegistrarApp} from "../controllers/appController.js";
+import {
+    agregarFavorito,
+    getReservasByUsuario,
+    IniciarSesionApp,
+    obtenerFavoritos,
+    RegistrarApp
+} from "../controllers/appController.js";
 
 const router = express.Router();
 
@@ -10,5 +16,11 @@ router.post("/login", IniciarSesionApp);
 router.post("/register", RegistrarApp);
 
 router.get("/reservas/:idUsuario", getReservasByUsuario);
+
+// Agregar libro a favoritos
+router.post("/favoritos", agregarFavorito);
+
+// Obtener libros favoritos de un usuario
+router.get("/favoritos/:idUsuario", obtenerFavoritos);
 
 export default router;
