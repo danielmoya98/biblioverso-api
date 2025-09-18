@@ -6,3 +6,55 @@ Content-Type: application/json
   "username": "admin",
   "password": "admin123"
 }
+
+
+### Obtener todos los clientes
+GET http://localhost:4000/api/v1/desktop/clientes
+Accept: application/json
+
+
+### Crear un cliente nuevo
+POST http://localhost:4000/api/v1/desktop/clientes
+Content-Type: application/json
+Accept: application/json
+
+{
+  "usuario": "juanito",
+  "password": "123456",
+  "nombre": "Juan",
+  "apellido": "Pérez",
+  "email": "juan@example.com",
+  "telefono": "77777777",
+  "direccion": "Av. Central #123",
+  "genero": "Masculino",
+  "fecha_nac": "1998-05-20",
+  "nacionalidad": "Boliviano",
+  "biografia": "Amante de los libros de historia",
+  "foto": "https://mi-servidor.com/fotos/juan.png"
+}
+
+
+### Actualizar cliente existente (ej: id=5)
+PUT http://localhost:4000/api/v1/desktop/clientes/22
+Content-Type: application/json
+Accept: application/json
+
+{
+  "usuario": "juanito_upd",
+  "password": "nueva123",
+  "nombre": "Juan Carlos",
+  "apellido": "Pérez",
+  "email": "juan.carlos@example.com",
+  "telefono": "77788899",
+  "direccion": "Av. Updated #456",
+  "genero": "Masculino",
+  "fecha_nac": "1998-05-20",
+  "nacionalidad": "Boliviano",
+  "biografia": "Usuario actualizado",
+  "foto": "https://mi-servidor.com/fotos/juan_new.png"
+}
+
+
+### Eliminar cliente (ej: id=5)
+DELETE http://localhost:4000/api/v1/desktop/clientes/23
+Accept: application/json

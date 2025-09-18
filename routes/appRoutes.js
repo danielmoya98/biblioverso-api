@@ -2,7 +2,7 @@ import express from "express";
 import {
     agregarFavorito,
     getReservasByUsuario,
-    IniciarSesionApp,
+    IniciarSesionApp, listarCategorias, listarLibrosPorCategoria,
     obtenerFavoritos,
     RegistrarApp
 } from "../controllers/appController.js";
@@ -22,5 +22,10 @@ router.post("/favoritos", agregarFavorito);
 
 // Obtener libros favoritos de un usuario
 router.get("/favoritos/:idUsuario", obtenerFavoritos);
+
+router.get("/categorias", listarCategorias);
+
+// GET /categorias/:id/libros
+router.get("/categorias/:id/libros", listarLibrosPorCategoria);
 
 export default router;

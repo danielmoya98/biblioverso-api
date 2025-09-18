@@ -42,3 +42,11 @@ GET https://biblioverso-api.onrender.com/api/v1/app/reservas/20
 Accept: application/json
 
 
+
+### OBTENER TODAS LAS CATEGORIAS
+GET http://localhost:4000/api/v1/app/categorias
+Accept: application/json
+
+### OBTIENE TODOS LOS LIBROS DE UNA CATEGORIA
+GET http://localhost:4000/api/v1/app/categorias/4/libros
+Accept: application/json

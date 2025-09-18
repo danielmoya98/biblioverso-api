@@ -1,6 +1,7 @@
 import UsuarioModel from "../models/UsuarioModel.js";
 import ReservaModel from "../models/ReservaModel.js";
 import FavoritoModel from "../models/FavoritoModel.js";
+import { getCategorias, getLibrosByCategoria } from "../models/categoriaModel.js";
 
 
 export const IniciarSesionApp = async (req, res) => {
@@ -73,4 +74,27 @@ export const obtenerFavoritos = async (req, res) => {
         res.status(500).json({ error: "Error interno al obtener favoritos" });
     }
 };
+
+export const listarCategorias = async (req, res) => {
+    try {
+        const categorias = await getCategorias();
+        res.json(categorias);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Error al obtener categorías" });
+    }
+};
+
+export const listarLibrosPorCategoria = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const libros = await getLibrosByCategoria(id);
+        res.json(libros);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Error al obtener libros por categoría" });
+    }
+};
+
+
 
